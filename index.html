@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>No-Node Browser FPS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="overlay">
+    <div class="panel">
+      <h1>3D Browser FPS (No Node.js)</h1>
+      <p>
+        <strong>WASD</strong> move • <strong>Space</strong> jump • <strong>Mouse</strong> aim • <strong>Left Click</strong> or <strong>Shoot</strong> button to fire • <strong>C</strong> / <strong>Ctrl</strong> or <strong>Crouch</strong> button to crouch
+      </p>
+      <p class="muted">
+        Multiplayer uses <strong>BroadcastChannel</strong> across tabs/windows on the <strong>same browser + same device</strong>.
+      </p>
+      <button id="playBtn">Play</button>
+      <div class="small">
+        Open this page in 2+ tabs to test multiplayer.<br />
+        Best launched with a static server like <code>python -m http.server 8000</code> or VS Code Live Server.
+      </div>
+    </div>
+  </div>
+
+  <div id="hud">
+    <div id="health">HP: 100</div>
+    <div id="players">Players: 1</div>
+    <div id="mode">Mode: Same-device multiplayer</div>
+    <div id="crosshair"></div>
+    <div id="toast"></div>
+
+    <div id="controls">
+      <button id="shootBtn" class="control-btn">Shoot</button>
+      <button id="crouchBtn" class="control-btn">Crouch</button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
